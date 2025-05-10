@@ -1,12 +1,14 @@
 from character import Character
+from button import Button
 
 
 class Controller:
     """
     Represents a game controller composed of triggers, action buttons,
     and directional buttons. Aggregates a Character instance.
-    TODO: Add joystick support (optional challenge).
     """
+
+    # TODO: Add joystick support (optional challenge)
 
     def __init__(self, character: Character):
         """
@@ -36,6 +38,26 @@ class Controller:
         """
         return self.__directional_buttons
 
+    def map_controller(self):
+        """
+        Creates and maps all buttons to the controller's internal lists.
+        """
+        # Action buttons: A, B, X, Y
+        self.__action_buttons.append(Button("A"))  # jump
+        self.__action_buttons.append(Button("B"))  # dodge
+        self.__action_buttons.append(Button("X"))  # craft_arrow
+        self.__action_buttons.append(Button("Y"))  # attack
+
+        # Trigger buttons: LT, RT
+        self.__triggers.append(Button("LT"))  # aim_bow
+        self.__triggers.append(Button("RT"))  # shoot_arrow
+
+        # Directional buttons: ↑, ↓, ←, →
+        self.__directional_buttons.append(Button("↑"))
+        self.__directional_buttons.append(Button("↓"))
+        self.__directional_buttons.append(Button("←"))
+        self.__directional_buttons.append(Button("→"))
+
     def set_character(self, character: Character):
         """
         Updates the controller's character.
@@ -43,8 +65,10 @@ class Controller:
         """
         self.__character = character
 
-    def press_button(self):
+    def press_button(self, button: Button):
         """
-        Placeholder method for button press logic.
+        Simulates pressing a button on the controller.
+        :param button: The Button object to be pressed.
+        :return: None
         """
-        pass
+        button.on_press(self.__character)
