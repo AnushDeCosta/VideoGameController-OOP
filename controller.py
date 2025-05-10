@@ -1,5 +1,6 @@
 from character import Character
 from button import Button
+from trigger import Trigger
 
 
 class Controller:
@@ -49,8 +50,8 @@ class Controller:
         self.__action_buttons.append(Button("Y"))  # attack
 
         # Trigger buttons: LT, RT
-        self.__triggers.append(Button("LT"))  # aim_bow
-        self.__triggers.append(Button("RT"))  # shoot_arrow
+        self.__triggers.append(Trigger("LT"))  # aim_bow
+        self.__triggers.append(Trigger("RT"))  # shoot_arrow
 
         # Directional buttons: ↑, ↓, ←, →
         self.__directional_buttons.append(Button("↑"))
