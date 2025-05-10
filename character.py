@@ -42,6 +42,12 @@ class Character:
         """
         print(f"{self.__name} swiftly evades the enemy.")
 
+    def attack(self):
+        """
+        Displays a message indicating the character has attacked a foe.
+        """
+        print(f"{self.__name} strikes the foe.")
+
     def aim_bow(self):
         """
         Displays a message indicating the character is aiming.
@@ -72,9 +78,10 @@ class Character:
 
 
 # Test code
-character = Character("Thomas")
+character = Character("DeadPool")
 character.jump()
 character.dodge()
+character.attack()
 character.aim_bow()
 character.shoot_arrow()
 character.craft_arrow()
