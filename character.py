@@ -42,6 +42,48 @@ class Character:
         else:
             return "Jumping"
 
+    def jump(self):
+        """
+
+        :return:
+        """
+        pass
+
+    def dodge(self):
+        """
+
+        :return:
+        """
+        pass
+
+    def aim_bow(self):
+        """
+
+        :return:
+        """
+        pass
+
+    def shoot_arrow(self):
+        """
+
+        :return:
+        """
+        pass
+
+    def craft_arrow(self):
+        """
+
+        :return:
+        """
+        pass
+
+    def display_quiver(self):
+        """
+
+        :return:
+        """
+        pass
+
 # Test code
 character = Character("Thomas")
 print(f"Your character's name is {character.get_name()}, You have {character.get_arrows()} arrows left and is {character.get_is_jumping()}")
