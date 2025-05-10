@@ -1,6 +1,7 @@
 from character import Character
 from button import Button
 from trigger import Trigger
+from joystick import Joystick
 
 
 class Controller:
@@ -8,8 +9,6 @@ class Controller:
     Represents a game controller composed of triggers, action buttons,
     and directional buttons. Aggregates a Character instance.
     """
-
-    # TODO: Add joystick support (optional challenge)
 
     def __init__(self, character: Character):
         """
@@ -20,6 +19,7 @@ class Controller:
         self.__action_buttons = []
         self.__directional_buttons = []
         self.__character = character
+        self.__joysticks = []
 
     def get_triggers(self):
         """
@@ -38,6 +38,12 @@ class Controller:
         Returns the list of directional buttons.
         """
         return self.__directional_buttons
+
+    def get_joysticks(self):
+        """
+        Returns the list of joystick inputs.
+        """
+        return self.__joysticks
 
     def map_controller(self):
         """
@@ -58,6 +64,10 @@ class Controller:
         self.__directional_buttons.append(Button("↓"))
         self.__directional_buttons.append(Button("←"))
         self.__directional_buttons.append(Button("→"))
+
+        # Use Joystick
+        self.__joysticks.append(Joystick("LJ"))
+        self.__joysticks.append(Joystick("RJ"))
 
     def set_character(self, character: Character):
         """

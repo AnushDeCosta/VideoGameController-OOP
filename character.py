@@ -10,6 +10,9 @@ class Character:
         self.__name = name
         self.__arrows = 6
         self.__is_jumping = False
+        self.__x = 0
+        self.__y = 0
+        self.__facing_angle = 0
 
     def get_name(self):
         """
@@ -75,3 +78,23 @@ class Character:
         Displays the number of arrows currently in the quiver.
         """
         print(f"There are {self.__arrows} arrows remaining in the quiver.")
+
+    def move_up(self):
+        self.__y += 1
+        print(f"{self.__name} moves up to position ({self.__x}, {self.__y}).")
+
+    def move_down(self):
+        self.__y -= 1
+        print(f"{self.__name} moves down to position ({self.__x}, {self.__y}).")
+
+    def move_left(self):
+        self.__x -= 1
+        print(f"{self.__name} moves left to position ({self.__x}, {self.__y}).")
+
+    def move_right(self):
+        self.__x += 1
+        print(f"{self.__name} moves right to position ({self.__x}, {self.__y}).")
+
+    def rotate(self, degrees):
+        self.__facing_angle = (self.__facing_angle + degrees) % 360
+        print(f"{self.__name} rotates to {self.__facing_angle}° facing.")
