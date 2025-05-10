@@ -75,14 +75,3 @@ class Character:
         Displays the number of arrows currently in the quiver.
         """
         print(f"There are {self.__arrows} arrows remaining in the quiver.")
-
-
-# Test code
-character = Character("DeadPool")
-character.jump()
-character.dodge()
-character.attack()
-character.aim_bow()
-character.shoot_arrow()
-character.craft_arrow()
-character.display_quiver()
