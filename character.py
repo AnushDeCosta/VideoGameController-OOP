@@ -1,14 +1,11 @@
 class Character:
     """
-    Represents a game character with a name, a number of arrows,
-    and a jumping state.
+    Represents a game character with a name, arrow count, and jumping state.
     """
 
     def __init__(self, name):
         """
-        Initializes the character with a name, a default arrow count of 6,
-        and sets jumping status to False.
-        :param name: str - The name of the character
+        Initializes the character with a name, 6 arrows, and not jumping.
         """
         self.__name = name
         self.__arrows = 6
@@ -16,73 +13,69 @@ class Character:
 
     def get_name(self):
         """
-        Returns the name of the character.
-        :return: str
+        Returns the character's name.
         """
         return self.__name
 
     def get_arrows(self):
         """
-        Returns the current number of arrows the character has.
-        :return: int
+        Returns the number of arrows the character has.
         """
         return self.__arrows
 
     def get_is_jumping(self):
         """
-        Returns a string representation of the character's jumping state.
-        :return: str - "Jumping" or "Not Jumping"
+        Returns the jumping state as a readable string.
         """
-        if self.__is_jumping == False:
-            return "Not Jumping"
-        else:
-            return "Jumping"
+        return "Jumping" if self.__is_jumping else "Not Jumping"
 
     def jump(self):
         """
-        Makes the character jump by updating their jumping status and
-        displaying a message.
-        :return: None, Prints a message
+        Makes the character jump and updates the jumping state.
         """
         self.__is_jumping = True
-        print(f"{self.__name} jumps in the air")
+        print(f"{self.__name} jumps in the air.")
 
     def dodge(self):
         """
-        Displays a message indicating the character has dodged an attack.
-        :return: None
+        Displays a message indicating the character dodged an attack.
         """
         print(f"{self.__name} swiftly evades the enemy.")
 
     def aim_bow(self):
         """
-
-        :return:
+        Displays a message indicating the character is aiming.
         """
-        pass
+        print(f"{self.__name} takes aim.")
 
     def shoot_arrow(self):
         """
-
-        :return:
+        Reduces the arrow count and displays a shooting message.
         """
-        pass
+        self.__arrows -= 1
+        print(f"{self.__name} releases the shot.")
+        print(f"{self.__name} has {self.__arrows} arrow(s) left.")
 
     def craft_arrow(self):
         """
-
-        :return:
+        Increases the arrow count and displays a crafting message.
         """
-        pass
+        self.__arrows += 1
+        print(f"{self.__name} crafts a new arrow.")
+        print(f"{self.__name} now has {self.__arrows} arrow(s).")
 
     def display_quiver(self):
         """
-
-        :return:
+        Displays the number of arrows currently in the quiver.
         """
-        pass
+        print(f"There are {self.__arrows} arrows remaining in the quiver.")
+
 
 # Test code
 character = Character("Thomas")
 character.jump()
 character.dodge()
+character.aim_bow()
+character.shoot_arrow()
+character.craft_arrow()
+character.display_quiver()
